@@ -1,0 +1,44 @@
+material Examples/BeachStones
+{
+	technique
+	{
+		pass
+		{
+			ambient 0.1 0.1 0.1
+
+			texture_unit
+			{
+				texture BeachStones.jpg
+			}
+		}
+	}
+}
+
+material Examples/Ninja
+{
+	technique
+	{
+		pass
+		{
+		
+			texture_unit
+			{
+				texture nskingr.jpg
+			}
+		}
+	}
+}
+
+material Examples/GrassFloor
+{
+	technique
+	{
+		pass
+		{
+			texture_unit
+			{
+				texture grass_1024.jpg
+			}
+		}
+	}
+}

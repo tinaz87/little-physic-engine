@@ -1,0 +1,29 @@
+﻿  BaseApplication.cpp
+c:\users\probook\desktop\engine\ogresrc_v1-8-0\ogremain\include\ogreinstancemanager.h(279): warning C4512: 'Ogre::InstanceManager': impossibile generare un operatore di assegnazione
+          c:\users\probook\desktop\engine\ogresrc_v1-8-0\ogremain\include\ogreinstancemanager.h(62): vedere la dichiarazione di 'Ogre::InstanceManager'
+c:\users\probook\desktop\engine\ogresrc_v1-8-0\dependencies\src\ois-1.2.0\includes\oisinputmanager.h(203): warning C4512: 'OIS::InputManager': impossibile generare un operatore di assegnazione
+          c:\users\probook\desktop\engine\ogresrc_v1-8-0\dependencies\src\ois-1.2.0\includes\oisinputmanager.h(39): vedere la dichiarazione di 'OIS::InputManager'
+c:\users\probook\desktop\engine\ogresrc_v1-8-0\dependencies\src\ois-1.2.0\includes\oiskeyboard.h(193): warning C4512: 'OIS::KeyEvent': impossibile generare un operatore di assegnazione
+          c:\users\probook\desktop\engine\ogresrc_v1-8-0\dependencies\src\ois-1.2.0\includes\oiskeyboard.h(183): vedere la dichiarazione di 'OIS::KeyEvent'
+c:\users\probook\desktop\engine\ogresrc_v1-8-0\dependencies\src\ois-1.2.0\includes\oismouse.h(88): warning C4512: 'OIS::MouseEvent': impossibile generare un operatore di assegnazione
+          c:\users\probook\desktop\engine\ogresrc_v1-8-0\dependencies\src\ois-1.2.0\includes\oismouse.h(80): vedere la dichiarazione di 'OIS::MouseEvent'
+c:\users\probook\desktop\master\physics programming\progetto\ogreapp\ogreapp\include\baseapplication.h(147): warning C4127: espressione condizionale costante
+c:\users\probook\desktop\master\physics programming\progetto\ogreapp\ogreapp\src\baseapplication.cpp(274): warning C4239: utilizzata estensione non standard: 'argomento'. Conversione da 'physic::Vector3' a 'physic::Vector3 &'
+          Un riferimento non const può essere associato solo a un elemento lvalue
+c:\users\probook\desktop\master\physics programming\progetto\ogreapp\ogreapp\src\baseapplication.cpp(274): warning C4239: utilizzata estensione non standard: 'argomento'. Conversione da 'physic::Vector3' a 'physic::Vector3 &'
+          Un riferimento non const può essere associato solo a un elemento lvalue
+c:\users\probook\desktop\master\physics programming\progetto\ogreapp\ogreapp\src\baseapplication.cpp(275): warning C4239: utilizzata estensione non standard: 'argomento'. Conversione da 'physic::Vector3' a 'physic::Vector3 &'
+          Un riferimento non const può essere associato solo a un elemento lvalue
+c:\users\probook\desktop\master\physics programming\progetto\ogreapp\ogreapp\src\baseapplication.cpp(275): warning C4239: utilizzata estensione non standard: 'argomento'. Conversione da 'physic::Vector3' a 'physic::Vector3 &'
+          Un riferimento non const può essere associato solo a un elemento lvalue
+c:\users\probook\desktop\master\physics programming\progetto\ogreapp\ogreapp\src\baseapplication.cpp(466): warning C4239: utilizzata estensione non standard: 'argomento'. Conversione da 'physic::Vector3' a 'physic::Vector3 &'
+          Un riferimento non const può essere associato solo a un elemento lvalue
+c:\users\probook\desktop\master\physics programming\progetto\ogreapp\ogreapp\src\baseapplication.cpp(475): warning C4239: utilizzata estensione non standard: 'argomento'. Conversione da 'physic::Vector3' a 'physic::Vector3 &'
+          Un riferimento non const può essere associato solo a un elemento lvalue
+c:\users\probook\desktop\master\physics programming\progetto\ogreapp\ogreapp\src\baseapplication.cpp(767): warning C4189: 'ball': variabile locale inizializzata ma senza riferimenti
+  Generazione del codice in corso...
+  Omissione in corso... (nessuna modifica importante rilevata)
+  OgreApp.cpp
+  CollisionObject.cpp
+  OgreApp.vcxproj -> C:\Users\PROBOOK\Desktop\MASTER\Physics Programming\Progetto\OgreApp\OgreApp\bin\Debug\OgreApp.exe
+          1 file copiati.
