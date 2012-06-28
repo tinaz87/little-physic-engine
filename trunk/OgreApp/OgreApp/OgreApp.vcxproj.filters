@@ -16,9 +16,6 @@
     <Filter Include="Physic">
       <UniqueIdentifier>{b86b11a0-cb2a-42ce-b4dd-81716c0daa60}</UniqueIdentifier>
     </Filter>
-    <Filter Include="fisica">
-      <UniqueIdentifier>{5a4a76a3-6902-4cad-9ece-bee1f58770c3}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\OgreApp.h">
@@ -51,9 +48,6 @@
     <ClInclude Include="include\CollisionObject.h">
       <Filter>Physic</Filter>
     </ClInclude>
-    <ClInclude Include="src\cattani\Collisore.h">
-      <Filter>fisica</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\OgreApp.cpp">
@@ -82,9 +76,6 @@
     </ClCompile>
     <ClCompile Include="src\CollisionObject.cpp">
       <Filter>Physic</Filter>
-    </ClCompile>
-    <ClCompile Include="src\cattani\Collisore.cpp">
-      <Filter>fisica</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

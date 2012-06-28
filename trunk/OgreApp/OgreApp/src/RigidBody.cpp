@@ -152,12 +152,6 @@ void RigidBody::integrate(float duration)
 	// Update linear position.
 	position.AddScaledVector(velocity, duration);
 
-	/*for (int i=0;i<100;++i)
-	{
-		std::cout<<'\b';
-	}
-	std::cout<<"Position: "<<position.y<<"Force: "<<forceAccum.y;
-*/
 	// Update angular position.
 	orientation.AddScaledVector(rotation, duration);
 
@@ -270,8 +264,7 @@ Matrix3 RigidBody::getInverseInertiaTensorWorld() const
 	return inverseInertiaTensorWorld;
 }
 
-void RigidBody::setDamping(const float linearDamping,
-	const float angularDamping)
+void RigidBody::setDamping(const float linearDamping,const float angularDamping)
 {
 	RigidBody::linearDamping = linearDamping;
 	RigidBody::angularDamping = angularDamping;
@@ -325,8 +318,7 @@ void RigidBody::setOrientation(const Quaternion &orientation)
 	RigidBody::orientation.Normalise();
 }
 
-void RigidBody::setOrientation(const float r, const float i,
-	const float j, const float k)
+void RigidBody::setOrientation(const float r, const float i,const float j, const float k)
 {
 	orientation.r = r;
 	orientation.i = i;
@@ -527,8 +519,7 @@ void RigidBody::addForce(const Vector3 &force)
 	isAwake = true;
 }
 
-void RigidBody::addForceAtBodyPoint(const Vector3 &force,
-	const Vector3 &point)
+void RigidBody::addForceAtBodyPoint(const Vector3 &force,const Vector3 &point)
 {
 	// Convert to coordinates relative to center of mass.
 	Vector3 pt = getPointInWorldSpace(point);
@@ -537,8 +528,7 @@ void RigidBody::addForceAtBodyPoint(const Vector3 &force,
 	isAwake = true;
 }
 
-void RigidBody::addForceAtPoint(const Vector3 &force,
-	const Vector3 &point)
+void RigidBody::addForceAtPoint(const Vector3 &force,const Vector3 &point)
 {
 	// Convert to coordinates relative to center of mass.
 	Vector3 pt = point;

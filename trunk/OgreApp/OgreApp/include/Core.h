@@ -455,7 +455,7 @@ namespace physic
          */
         float data[12];
 
-		/*!
+		/*
          * Creates an identity matrix.
          */
         Matrix4()
@@ -467,7 +467,7 @@ namespace physic
             data[0] = data[5] = data[10] = 1;
         }
 
-        /*!
+        /*
          * Sets the matrix to be a diagonal matrix with the given coefficients.
          */
         void SetDiagonal(float a, float b, float c)
@@ -477,7 +477,7 @@ namespace physic
             data[10]	= c;
         }
 
-        /*!
+        /*
          * Returns a matrix which is this matrix multiplied by the given
          * other matrix.
          */
@@ -503,7 +503,7 @@ namespace physic
             return result;
         }
 		
-        /*!
+        /*
          * Transform the given vector by this matrix.
          */
         Vector3 Transform(const Vector3& vector) const
@@ -511,7 +511,7 @@ namespace physic
             return (*this) * vector;
         }
 
-        /*!
+        /*
          * Transform the given vector by this matrix.
          */
         Vector3 operator*(const Vector3& vector) const
@@ -531,17 +531,17 @@ namespace physic
             );
         }
 
-        /*!
+        /*
          * Returns the determinant of the matrix.
          */
         float GetDeterminant() const;
 
-        /*!
+        /*
          * Sets this matrix to be the inverse of the given matrix.
          */
         void SetInverse(const Matrix4& m);
 
-        /*! 
+        /*
 		 * Returns a new matrix containing the inverse of this matrix. 
 		 */
         Matrix4 Inverse() const
@@ -562,7 +562,7 @@ namespace physic
         /*!
          * Transform the given direction vector by this matrix.
          *
-         * \note When a direction is converted between frames of
+         * note: When a direction is converted between frames of
          * reference, there is no translation required.
          */
         Vector3 TransformDirection(const Vector3& vector) const
@@ -586,10 +586,10 @@ namespace physic
          * Transform the given direction vector by the
          * transformational inverse of this matrix.
          *
-         * \note This function relies on the fact that the inverse of
+         * note: This function relies on the fact that the inverse of
          * a pure rotation matrix is its transpose.
          *
-         * \note When a direction is converted between frames of
+         * note: When a direction is converted between frames of
          * reference, there is no translation required.
          */
         Vector3 TransformInverseDirection(const Vector3& vector) const

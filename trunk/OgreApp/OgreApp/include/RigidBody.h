@@ -479,21 +479,12 @@ class RigidBody
 
 		*/
 		void addForce(const Vector3 &force);
-		// < AddForceAtCenter
 
-		// > AddForceBody
 		/**
 		* Adds the given force to the given point on the rigid body.
 		* Both the force and the application point are given in world
 		* space. Because the force is not applied at the centre of
 		* mass, it may be split into both a force and torque.
-		// < AddForceBody
-		*
-		* @param force The force to apply.
-		*
-		* @param point The location at which to apply the force, in
-		* world-coordinates.
-		// > AddForceBody
 		*/
 		void addForceAtPoint(const Vector3 &force, 
 			const Vector3 &point);
@@ -507,7 +498,7 @@ class RigidBody
 		*/
 		void addForceAtBodyPoint(const Vector3 &force, 
 			const Vector3 &point);
-		// < AddForceBody
+
 
 		/**
 		* Adds the given torque to the rigid body.
