@@ -331,18 +331,13 @@ inline Vector3 Contact::calculateFrictionImpulse(Matrix3 * inverseInertiaTensor)
     Matrix3 impulseMatrix = deltaVelocity.Inverse();
 
     // Find the target velocities to kill
-    Vector3 velKill(desiredDeltaVelocity,
-        -contactVelocity.y,
-        -contactVelocity.z);
+    Vector3 velKill(desiredDeltaVelocity,-contactVelocity.y,-contactVelocity.z);
 
     // Find the impulse to kill target velocities
     impulseContact = impulseMatrix.Transform(velKill);
 
     // Check for exceeding friction
-    float planarImpulse = sqrt(
-        impulseContact.y*impulseContact.y +
-        impulseContact.z*impulseContact.z
-        );
+    float planarImpulse = sqrt(impulseContact.y*impulseContact.y +impulseContact.z*impulseContact.z);
     if (planarImpulse > impulseContact.x * friction)
     {
         // We need to use dynamic friction
@@ -410,10 +405,7 @@ void Contact::applyPositionChange(Vector3 linearChange[2],
         // To avoid angular projections that are too great (when mass is large
         // but inertia tensor is small) limit the angular move.
         Vector3 projection = relativeContactPosition[i];
-        projection.AddScaledVector(
-            contactNormal,
-            -relativeContactPosition[i].DotProduct(contactNormal)
-            );
+        projection.AddScaledVector(contactNormal,-relativeContactPosition[i].DotProduct(contactNormal));
 
         // Use the small angle approximation for the sine of the angle (i.e.
         // the magnitude would be sine(angularLimit) * projection.magnitude

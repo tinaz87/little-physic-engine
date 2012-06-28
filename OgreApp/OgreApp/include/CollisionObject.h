@@ -14,11 +14,7 @@ namespace physic{
         float radius;
     };
 
-    /**
-     * The plane is not a primitive: it doesn't represent another
-     * rigid body. It is used for contacts with the immovable
-     * world geometry.
-     */
+
     class CollisionPlane
     {
     public:
@@ -55,9 +51,6 @@ namespace physic{
     {
     public:
 
-        /*static bool sphereAndHalfSpace(
-            const CollisionSphere &sphere,
-            const CollisionPlane &plane);*/
 
         static bool sphereAndSphere(
             const CollisionSphere &one,
@@ -67,18 +60,6 @@ namespace physic{
             const CollisionBox &one,
             const CollisionBox &two);
 
-        /**
-         * Does an intersection test on an arbitrarily aligned box and a
-         * half-space.
-         *
-         * The box is given as a transform matrix, including
-         * position, and a vector of half-sizes for the extend of the
-         * box along each local axis.
-         *
-         * The half-space is given as a direction (i.e. unit) vector and the
-         * offset of the limiting plane from the origin, along the given
-         * direction.
-         */
         static bool boxAndHalfSpace(
             const CollisionBox &box,
             const CollisionPlane &plane);
@@ -159,12 +140,6 @@ namespace physic{
     {
     public:
 
-        //static unsigned sphereAndHalfSpace(
-        //    const CollisionSphere &sphere,
-        //    const CollisionPlane &plane,
-        //    CollisionData *data
-        //    );
-
         static unsigned sphereAndTruePlane(
             const CollisionSphere &sphere,
             const CollisionPlane &plane,
@@ -177,28 +152,11 @@ namespace physic{
             CollisionData *data
             );
 
-        /**
-         * Does a collision test on a collision box and a plane representing
-         * a half-space (i.e. the normal of the plane
-         * points out of the half-space).
-         */
         static unsigned boxAndHalfSpace(
             const CollisionBox &box,
             const CollisionPlane &plane,
             CollisionData *data
             );
-
-        //static unsigned boxAndBox(
-        //    const CollisionBox &one,
-        //    const CollisionBox &two,
-        //    CollisionData *data
-        //    );
-
-        //static unsigned boxAndPoint(
-        //    const CollisionBox &box,
-        //    const Vector3 &point,
-        //    CollisionData *data
-        //    );
 
         static unsigned boxAndSphere(
             const CollisionBox &box,

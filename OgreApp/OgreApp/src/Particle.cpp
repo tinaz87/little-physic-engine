@@ -12,17 +12,10 @@ void Particle::integrate(const float dt){
 
 	// Update linear position.
 	position.AddScaledVector(velocity, dt);
-	
-	// Work out the acceleration from the force
-	// < ParticleAccum
-	// (we'll add to this vector when we come to generate forces)
-	// > ParticleAccum
+
 	Vector3 resultingAcc = acceleration;
 
-	// < ParticleIntegrate
 	resultingAcc.AddScaledVector(forceAccum, inverseMass);
-
-	// > ParticleIntegrate
 
 	// Update linear velocity from the acceleration.
 	velocity.AddScaledVector(resultingAcc, dt);

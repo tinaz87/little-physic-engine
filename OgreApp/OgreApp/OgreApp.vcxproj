@@ -127,11 +127,9 @@
     <ClInclude Include="include\Particle.h" />
     <ClInclude Include="include\RigidBody.h" />
     <ClInclude Include="res\Resource.h" />
-    <ClInclude Include="src\cattani\Collisore.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\BaseApplication.cpp" />
-    <ClCompile Include="src\cattani\Collisore.cpp" />
     <ClCompile Include="src\CollisionObject.cpp" />
     <ClCompile Include="src\CollisionPrimitive.cpp" />
     <ClCompile Include="src\Contacts.cpp" />
