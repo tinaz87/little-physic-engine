@@ -11,8 +11,7 @@ bool IntersectionTests::sphereAndSphere(
     Vector3 midline = one.getAxis(3) - two.getAxis(3);
 
     // See if it is large enough.
-    return midline.SquareMagnitude() <
-        (one.radius+two.radius)*(one.radius+two.radius);
+    return midline.SquareMagnitude() < (one.radius+two.radius)*(one.radius+two.radius);
 }
 
 static inline float transformToAxis(
