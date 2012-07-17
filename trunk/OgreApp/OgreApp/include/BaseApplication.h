@@ -92,11 +92,18 @@ protected:
     Ogre::RenderWindow* mWindow;
     Ogre::String mResourcesCfg;
     Ogre::String mPluginsCfg;
+	bool tweak;
 
     // OgreBites
-    OgreBites::SdkTrayManager* mTrayMgr;
+	//OgreBites::ParamsPanel ObjectPanel;
+
+	OgreBites::Slider* ballVelocitySlider;
+	OgreBites::Slider* boxVelocitySlider;
+
+	OgreBites::SdkTrayManager* mTrayMgr;
     OgreBites::SdkCameraMan* mCameraMan;     // basic camera controller
     OgreBites::ParamsPanel* mDetailsPanel;   // sample details panel
+	OgreBites::Label* label;
     bool mCursorWasVisible;                  // was cursor visible before dialog appeared
     bool mShutDown;
 
@@ -142,6 +149,8 @@ protected:
 
 	void generateBox(Vector3& velocity,Vector3& position);
 	
+	void clearAll();
+
 	void showWin32Console(){
 
 		if (on)

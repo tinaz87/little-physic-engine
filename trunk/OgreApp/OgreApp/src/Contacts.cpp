@@ -51,8 +51,7 @@ void Contact::swapBodies()
  * direction is generated from the contact normal, and the y and z
  * directionss are set so they are at right angles to it.
  */
-inline
-void Contact::calculateContactBasis()
+inline void Contact::calculateContactBasis()
 {
     Vector3 contactTangent[2];
 
