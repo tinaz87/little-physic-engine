@@ -3,9 +3,7 @@
 using namespace physic;
 
 
-bool IntersectionTests::sphereAndSphere(
-    const CollisionSphere &one,
-    const CollisionSphere &two)
+bool IntersectionTests::sphereAndSphere(const CollisionSphere &one,const CollisionSphere &two)
 {
     // Find the vector between the objects
     Vector3 midline = one.getAxis(3) - two.getAxis(3);
@@ -14,10 +12,7 @@ bool IntersectionTests::sphereAndSphere(
     return midline.SquareMagnitude() < (one.radius+two.radius)*(one.radius+two.radius);
 }
 
-static inline float transformToAxis(
-    const CollisionBox &box,
-    const Vector3 &axis
-    )
+static inline float transformToAxis(const CollisionBox &box,const Vector3 &axis)
 {
     return
         box.halfSize.x * abs(axis * box.getAxis(0)) +
@@ -25,62 +20,6 @@ static inline float transformToAxis(
         box.halfSize.z * abs(axis * box.getAxis(2));
 }
 
-/**
- * This function checks if the two boxes overlap
- * along the given axis. The final parameter toCentre
- * is used to pass in the vector between the boxes centre
- * points, to avoid having to recalculate it each time.
- */
-static inline bool overlapOnAxis(
-    const CollisionBox &one,
-    const CollisionBox &two,
-    const Vector3 &axis,
-    const Vector3 &toCentre
-    )
-{
-    // Project the half-size of one onto axis
-    float oneProject = transformToAxis(one, axis);
-    float twoProject = transformToAxis(two, axis);
-
-    // Project this onto the axis
-    float distance = abs(toCentre * axis);
-
-    // Check for overlap
-    return (distance < oneProject + twoProject);
-}
-
-
-#define TEST_OVERLAP(axis) overlapOnAxis(one, two, (axis), toCentre)
-
-bool IntersectionTests::boxAndBox(const CollisionBox &one,const CollisionBox &two)
-{
-    // Find the vector between the two centres
-    Vector3 toCentre = two.getAxis(3) - one.getAxis(3);
-
-    return (
-        // Check on box one's axes first
-        TEST_OVERLAP(one.getAxis(0)) &&
-        TEST_OVERLAP(one.getAxis(1)) &&
-        TEST_OVERLAP(one.getAxis(2)) &&
-
-        // And on two's
-        TEST_OVERLAP(two.getAxis(0)) &&
-        TEST_OVERLAP(two.getAxis(1)) &&
-        TEST_OVERLAP(two.getAxis(2)) &&
-
-        // Now on the cross products
-        TEST_OVERLAP(one.getAxis(0) % two.getAxis(0)) &&
-        TEST_OVERLAP(one.getAxis(0) % two.getAxis(1)) &&
-        TEST_OVERLAP(one.getAxis(0) % two.getAxis(2)) &&
-        TEST_OVERLAP(one.getAxis(1) % two.getAxis(0)) &&
-        TEST_OVERLAP(one.getAxis(1) % two.getAxis(1)) &&
-        TEST_OVERLAP(one.getAxis(1) % two.getAxis(2)) &&
-        TEST_OVERLAP(one.getAxis(2) % two.getAxis(0)) &&
-        TEST_OVERLAP(one.getAxis(2) % two.getAxis(1)) &&
-        TEST_OVERLAP(one.getAxis(2) % two.getAxis(2))
-    );
-}
-#undef TEST_OVERLAP
 
 bool IntersectionTests::boxAndHalfSpace(const CollisionBox &box, const CollisionPlane &plane )
 {
